@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>hvt ledger</title>
+<!-- Launcher only: holds the home-screen icon and forwards to the dashboard web app (Google sign-in required there). No data lives here. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-title" content="hvt ledger">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #000; color: #f2f2f2; font: 15px/1.5 -apple-system, system-ui, "Segoe UI", sans-serif; }
+  main { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 24px; box-sizing: border-box; text-align: center; }
+  img { width: 96px; height: 96px; border-radius: 22px; }
+  a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 12px; background: #f2f2f2; color: #000; text-decoration: none; font-weight: 600; }
+  p { margin: 0; color: #a3a3a3; }
+  button { min-height: 44px; padding: 0 16px; border: 1px solid #2e2e2e; border-radius: 12px; background: transparent; color: #bdbdbd; font: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-192.png" alt="hvt ledger">
+  <p id="msg">Opening hvt ledger…</p>
+  <a id="go" href="https://script.google.com/macros/s/AKfycbwRA9sDxfne8sIsqg_XW63c3zIS5uNFeNapwZ0Gu5VolBvRXIUJNhSp4wHcN8UZ2r9IHw/exec">Open dashboard</a>
+  <button id="stay" type="button">Stay here (to add to Home Screen)</button>
+</main>
+<script>
+  // Forward after a short pause. "Stay" cancels it so the page can be added to the Home Screen (iOS saves this exact URL).
+  var go = document.getElementById('go').href;
+  var t = setTimeout(function () { location.replace(go); }, 1500);
+  document.getElementById('stay').onclick = function () {
+    clearTimeout(t);
+    document.getElementById('msg').textContent = 'Now tap Share → Add to Home Screen. The icon will open the dashboard.';
+    this.remove();
+  };
+</script>
+</body>
+</html>

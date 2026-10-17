@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<!-- hvt ledger icon, variant A: black mark, white light rim, on pure black. Monochrome. -->
+<defs><symbol id="m" overflow="visible"><g transform="translate(-1188 -291)" fill="none" stroke="#000" stroke-width="366.667" stroke-miterlimit="8">
+<path d="M1494.5 2124.5 3144.5 474.5M2317.53 472.5 1497.5 1302.71 3144.5 2122.5"/></g></symbol>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feMorphology in="SourceAlpha" operator="dilate" radius="60"/><feGaussianBlur stdDeviation="130"/><feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>
+<filter id="rim" x="-20%" y="-20%" width="140%" height="140%"><feMorphology in="SourceAlpha" operator="dilate" radius="22"/><feGaussianBlur stdDeviation="4"/><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter></defs>
+<rect width="1024" height="1024" fill="#000"/>
+<g transform="translate(204.80 225.47) scale(0.28710)"><use href="#m" filter="url(#glow)"/><use href="#m" filter="url(#rim)"/><use href="#m"/></g></svg>
